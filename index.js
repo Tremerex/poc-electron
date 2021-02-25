@@ -1,4 +1,5 @@
 const { app, BrowserWindow } = require('electron');
+const isDev = require('electron-is-dev');
 const prepareNext = require('electron-next');
 const path = require('path');
 
@@ -12,12 +13,16 @@ function createWindow() {
     webPreferences: {}
   });
 
-  mainWindow.loadURL('http://localhost:3000/');
+  const webPath = !isDev ? 'http://localhost:3000'
+    : `file://${path.join(__dirname, './build/server/pages/index.html')}`;
+
+  mainWindow.loadURL(webPath);
 }
 
 app.whenReady().then(async () => {
-  // dev mode
-  await prepareNext('./', 3000);
+  if (isDev) {
+    await prepareNext('./', 3000);
+  }
   createWindow();
   app.on('activate', function () {
     if (BrowserWindow.getAllWindows().length === 0) {
