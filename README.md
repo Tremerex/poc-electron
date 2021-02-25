@@ -1,2 +1,14 @@
-# poc-electron
-Next and Electron application
+# POC Electron
+
+## Install Dependencies
+
+```bash
+yarn install
+```
+
+## Usage
+
+```bash
+yarn electron
+
+```
