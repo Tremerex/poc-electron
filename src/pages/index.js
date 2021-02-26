@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import App from '../App'
 
 export const getStaticProps = async () => {
   const response = await fetch('https://syndicator.univision.com/web-api/local-market-content?url=https://www.univision.com');
@@ -20,12 +21,7 @@ const Main = (props) => {
         <title>Next with Electron</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <div>
-        { JSON.stringify(props) }
-      </div>
-      <div>
-        { hasAccess ? 'you don´t have access' : 'hello world!' }
-      </div>
+      <App />
     </>
   );
 };
