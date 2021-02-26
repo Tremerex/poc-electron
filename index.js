@@ -13,7 +13,7 @@ function createWindow() {
     webPreferences: {}
   });
 
-  const webPath = !isDev ? 'http://localhost:3000'
+  const webPath = isDev ? 'http://localhost:3000'
     : `file://${path.join(__dirname, './build/server/pages/index.html')}`;
 
   mainWindow.loadURL(webPath);
