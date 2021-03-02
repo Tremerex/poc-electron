@@ -1,11 +1,12 @@
 import React from 'react';
-import WeatherHeader from './WeatherHeader'
-import WeatherData from './WeatherData'
-import WeatherNextHoursData from './WeatherNextHoursData'
-import { getMarketmetadata } from '../constants/marketMetadata'
-import { getIconById } from '../Icons/weather'
+import WeatherHeader from './WeatherHeader';
+import WeatherData from './WeatherData';
+import WeatherNextHoursData from './WeatherNextHoursData';
+import MarketSelector from '../MarketSelector';
+import { getMarketmetadata } from '../constants/marketMetadata';
+import { getIconById } from '../Icons/weather';
 import styled from 'styled-components';
-import moment from 'moment'
+import moment from 'moment';
 import { get } from 'lodash';
 
 const Container = styled.div`
@@ -62,7 +63,9 @@ function WeatherContainer({ data, marketId }) {
 
   return (
     <Container>
-      <WeatherHeader marketName={marketName} currentTime={currentTime} />
+      <WeatherHeader marketName={marketName} currentTime={currentTime}>
+        <MarketSelector />
+      </WeatherHeader>
       <ContentContainer>
         <WeatherData phrase={phrase} tempUnit={'F'} wind={wind} precipChance={precipChance} icon={icon} temp={tempF} maxTemp={maxTempF} minTemp={minTempF} humidity={humidity} />
         <Space />

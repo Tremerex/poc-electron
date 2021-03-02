@@ -5,12 +5,13 @@ const path = require('path');
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
-    width: 300,
-    height: 240,
-    resizable: false,
-    autoHideMenuBar: true,
     alwaysOnTop: true,
-    webPreferences: {}
+    autoHideMenuBar: true,
+    height: 360,
+    icon: path.join(__dirname, './public/assets/icons/48x48.png'),
+    resizable: false,
+    webPreferences: {},
+    width: 380,
   });
 
   const webPath = isDev ? 'http://localhost:3000'

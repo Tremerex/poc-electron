@@ -5,22 +5,22 @@ import WeatherIcons from '../Icons/weather'
 import get from 'lodash/get'
 
 const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 12px;
-    `;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 12px;
+`;
 
 const WeatherContainer = styled.div`
-    display: flex;
-    flex: 1;
-    /* background-color: red; */
-    `;
+  display: flex;
+  flex: 1;
+  /* background-color: red; */
+`;
 
 const WeatherContainerLeft = styled.div`
-display: flex;
-flex: 0.5;
-/* background-color: red; */
+  display: flex;
+  flex: 0.5;
+  /* background-color: red; */
 `;
 
 const TemperatureContainer = styled.div`
@@ -30,8 +30,8 @@ const TemperatureContainer = styled.div`
 `;
 
 const Temperature = styled.div`
-font-size: 2rem;
-font-weight: bold;
+  font-size: 2rem;
+  font-weight: bold;
 `;
 
 const MinMaxContainer = styled.div`
@@ -52,12 +52,12 @@ const MinMaxItem = styled.div`
 `
 
 const ConditionsContainer = styled.div`
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    flex: 1;
-    padding-top: 8px;
-    `;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  flex: 1;
+  padding-top: 8px;
+`;
 
 const ConditionsDesc = styled.span`
   font-size: 0.8rem;
@@ -79,7 +79,7 @@ const WeatherData = ({
   wind,
 }) => {
 
-  const CurrentWeatherIcon = get(WeatherIcons,[icon]) 
+  const CurrentWeatherIcon = get(WeatherIcons,[icon])
   const MinTempIcon = WeatherIcons['minTemp']
   const MaxTempIcon = WeatherIcons['maxTemp']
 
