@@ -1,27 +1,25 @@
 import React from 'react';
+import { configureStore } from '@reduxjs/toolkit';
+import { Provider } from 'react-redux';
 import Head from 'next/head';
 import App from '../App'
 
-export const getStaticProps = async () => {
-  const response = await fetch('https://syndicator.univision.com/web-api/local-market-content?url=https://www.univision.com');
-  const result = await response.json();
-  const { status } = result;
-  return {
-    props: {
-      hasAccess: status === 'success',
-    },
-  }
-};
+import rootReducer from "../features";
 
-const Main = (props) => {
-  const { hasAccess } = props;
+const store = configureStore({
+  reducer: rootReducer,
+});
+
+const Main = () => {
   return (
     <>
       <Head>
         <title>Next with Electron</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </>
   );
 };
