@@ -12,7 +12,7 @@ const fetchMarketWeatherAsync = async (market) => {
       } catch (ex) {
         return reject(ex);
       }
-    }, 1000);
+    }, 3000);
   });
 };
 

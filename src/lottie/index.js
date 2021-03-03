@@ -9,10 +9,12 @@ const list = [
   dayNight,
   flowerMograph,
   sunny,
-  weatherAppAnimation,
 ];
 
+let itemIndex = 0
+
 export const getLottieAnimation = () => {
-  const index = Math.floor(Math.random() * (list.length));
-  return list[index];
+  const animation = list[itemIndex%list.length]
+  itemIndex += 1
+  return animation;
 };
