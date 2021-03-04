@@ -7,23 +7,22 @@ function createWindow() {
   const mainWindow = new BrowserWindow({
     alwaysOnTop: true,
     autoHideMenuBar: true,
-    height: 360,
+    height: 400,
     icon: path.join(__dirname, './public/assets/icons/48x48.png'),
     resizable: false,
     webPreferences: {},
-    width: 380,
+    width: 420,
   });
 
   const webPath = isDev ? 'http://localhost:3000'
-    : `file://${path.join(__dirname, './build/server/pages/index.html')}`;
+    : `file://${path.join(__dirname, './out/index.html')}`;
 
   mainWindow.loadURL(webPath);
 }
 
 app.whenReady().then(async () => {
-  if (isDev) {
-    await prepareNext('./', 3000);
-  }
+  await prepareNext('./', 3000);
+  
   createWindow();
   app.on('activate', function () {
     if (BrowserWindow.getAllWindows().length === 0) {
