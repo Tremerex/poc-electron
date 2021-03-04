@@ -10,6 +10,7 @@ function createWindow() {
     height: 400,
     icon: path.join(__dirname, './public/assets/icons/48x48.png'),
     webPreferences: {},
+    frame:false,
     width: 420,
   });
 
