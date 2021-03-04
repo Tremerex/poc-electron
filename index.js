@@ -9,7 +9,6 @@ function createWindow() {
     autoHideMenuBar: true,
     height: 400,
     icon: path.join(__dirname, './public/assets/icons/48x48.png'),
-    resizable: false,
     webPreferences: {},
     width: 420,
   });
@@ -22,7 +21,7 @@ function createWindow() {
 
 app.whenReady().then(async () => {
   await prepareNext('./', 3000);
-  
+
   createWindow();
   app.on('activate', function () {
     if (BrowserWindow.getAllWindows().length === 0) {

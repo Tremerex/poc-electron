@@ -13,6 +13,14 @@ const store = configureStore({
 const Main = () => {
   return (
     <>
+      <style jsx global>{`
+        body {
+          margin: 0;
+          padding: 0;
+          font-family: sans-serif;
+        }
+      `}
+      </style>
       <Head>
         <title>Next with Electron</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />

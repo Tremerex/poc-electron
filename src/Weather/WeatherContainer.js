@@ -13,7 +13,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-  background-color: #f2f8fa;
+  background-color: #e2e2e2;
   height: 100vh;
 `
 

@@ -37,7 +37,7 @@ const LinkList = styled.div`
   position: absolute;
   right: 0;
   top: 22px;
-  width: 260px;
+  width: 300px;
   z-index: 3;
 `;
 
